@@ -108,6 +108,17 @@ def set_formatter(formatter: 'Formatter') -> None:
         handler.setFormatter(formatter)
 
 
+# handlers
+
+
+def _set_handlers(logger: logging.Logger) -> None:
+    for handler in logger.handlers:
+        logger.removeHandler(handler)
+
+    for handler in _root_logger.handlers:
+        logger.addHandler(handler)
+
+
 # log levels
 
 
@@ -132,6 +143,21 @@ def get_level() -> int:
 
 def set_level(level: int | str) -> None:
     _root_logger.setLevel(level)
+
+
+# loggers
+
+
+def logger_init(
+    logger: logging.Logger,
+    level: Level | None = None,
+    set_handlers: bool = True
+) -> None:
+    if level is not None:
+        logger.setLevel(level)
+
+    if set_handlers:
+        _set_handlers(logger)
 
 
 # Initialize the global logger
