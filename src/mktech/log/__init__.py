@@ -15,6 +15,8 @@ from typing import TypeAlias
 from mktech.os import environ
 from mktech.path import Path
 
+from .callable import log_args
+
 __all__ = [
     'DEBUG',
     'INFO',
@@ -22,6 +24,7 @@ __all__ = [
     'ERROR',
     'debug',
     'info',
+    'log_args',
     'warning',
     'error',
     'init'
