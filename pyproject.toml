@@ -35,7 +35,8 @@ dependencies = [
     "click>=8.1.8",
     "pydantic-settings>=2.8.1",
     "pydanclick[griffe]>=0.5.1",
-    "loguru>=0.7.3"
+    "loguru>=0.7.3",
+    "sarge>=0.1.7.post1"
 ]
 
 [project.urls]

@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:73cf0933d7d81009e5c645789e868a90cf33bedafee4293ae94f253684e14d4f"
+content_hash = "sha256:29e9495647f351755c4af3256bf9f257a60eea09bb002928c81d5c871b8c70f6"
 
 [[metadata.targets]]
 requires_python = ">=3.12"
@@ -339,7 +339,7 @@ files = [
 
 [[package]]
 name = "griffe"
-version = "1.12.1"
+version = "1.13.0"
 requires_python = ">=3.9"
 summary = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
 groups = ["default"]
@@ -347,8 +347,8 @@ dependencies = [
     "colorama>=0.4",
 ]
 files = [
-    {file = "griffe-1.12.1-py3-none-any.whl", hash = "sha256:2d7c12334de00089c31905424a00abcfd931b45b8b516967f224133903d302cc"},
-    {file = "griffe-1.12.1.tar.gz", hash = "sha256:29f5a6114c0aeda7d9c86a570f736883f8a2c5b38b57323d56b3d1c000565567"},
+    {file = "griffe-1.13.0-py3-none-any.whl", hash = "sha256:470fde5b735625ac0a36296cd194617f039e9e83e301fcbd493e2b58382d0559"},
+    {file = "griffe-1.13.0.tar.gz", hash = "sha256:246ea436a5e78f7fbf5f24ca8a727bb4d2a4b442a2959052eea3d0bfe9a076e0"},
 ]
 
 [[package]]
@@ -797,13 +797,13 @@ files = [
 
 [[package]]
 name = "platformdirs"
-version = "4.3.8"
+version = "4.4.0"
 requires_python = ">=3.9"
 summary = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
 groups = ["dev"]
 files = [
-    {file = "platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4"},
-    {file = "platformdirs-4.3.8.tar.gz", hash = "sha256:3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"},
+    {file = "platformdirs-4.4.0-py3-none-any.whl", hash = "sha256:abd01743f24e5287cd7a5db3752faf1a2d65353f38ec26d98e25a6db65958c85"},
+    {file = "platformdirs-4.4.0.tar.gz", hash = "sha256:ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf"},
 ]
 
 [[package]]
@@ -1107,7 +1107,7 @@ files = [
 
 [[package]]
 name = "python-lsp-server"
-version = "1.13.0"
+version = "1.13.1"
 requires_python = ">=3.9"
 summary = "Python Language Server for the Language Server Protocol"
 groups = ["dev"]
@@ -1121,13 +1121,13 @@ dependencies = [
     "ujson>=3.0.0",
 ]
 files = [
-    {file = "python_lsp_server-1.13.0-py3-none-any.whl", hash = "sha256:ad3a8f792915706dc65ce1ffcbaed361e5e648c973cd05e5c7a4a94c678fef97"},
-    {file = "python_lsp_server-1.13.0.tar.gz", hash = "sha256:378f26b63ecf4c10864de31de5e6da7ad639de9bd60a75d4110fea36fb8d0d69"},
+    {file = "python_lsp_server-1.13.1-py3-none-any.whl", hash = "sha256:fadf45275d12a9d9a13e36717a8383cee8e7cffe8a30698d38bfb3fe71b5cdcd"},
+    {file = "python_lsp_server-1.13.1.tar.gz", hash = "sha256:bfa3d6bbca3fc3e6d0137b27cd1eabee65783a8d4314c36e1e230c603419afa3"},
 ]
 
 [[package]]
 name = "python-lsp-server"
-version = "1.13.0"
+version = "1.13.1"
 extras = ["all"]
 requires_python = ">=3.9"
 summary = "Python Language Server for the Language Server Protocol"
@@ -1140,14 +1140,14 @@ dependencies = [
     "pydocstyle<6.4.0,>=6.3.0",
     "pyflakes<3.3.0,>=3.2.0",
     "pylint<4,>=3.1",
-    "python-lsp-server==1.13.0",
+    "python-lsp-server==1.13.1",
     "rope>=1.11.0",
     "whatthepatch<2.0.0,>=1.0.2",
     "yapf>=0.33.0",
 ]
 files = [
-    {file = "python_lsp_server-1.13.0-py3-none-any.whl", hash = "sha256:ad3a8f792915706dc65ce1ffcbaed361e5e648c973cd05e5c7a4a94c678fef97"},
-    {file = "python_lsp_server-1.13.0.tar.gz", hash = "sha256:378f26b63ecf4c10864de31de5e6da7ad639de9bd60a75d4110fea36fb8d0d69"},
+    {file = "python_lsp_server-1.13.1-py3-none-any.whl", hash = "sha256:fadf45275d12a9d9a13e36717a8383cee8e7cffe8a30698d38bfb3fe71b5cdcd"},
+    {file = "python_lsp_server-1.13.1.tar.gz", hash = "sha256:bfa3d6bbca3fc3e6d0137b27cd1eabee65783a8d4314c36e1e230c603419afa3"},
 ]
 
 [[package]]
@@ -1309,6 +1309,16 @@ files = [
 ]
 
 [[package]]
+name = "sarge"
+version = "0.1.7.post1"
+summary = "A wrapper for subprocess which provides command pipeline functionality."
+groups = ["default"]
+files = [
+    {file = "sarge-0.1.7.post1-py2.py3-none-any.whl", hash = "sha256:6da81592eac3fdb55708baddaf28deaad3a18f8719e3c082ea3b0405647ae72c"},
+    {file = "sarge-0.1.7.post1.tar.gz", hash = "sha256:64ff42ae6ef90acbded6318ed440ed63b31a669302fb60cf41265debea282a3d"},
+]
+
+[[package]]
 name = "snowballstemmer"
 version = "3.0.1"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*"
@@ -1385,13 +1395,13 @@ files = [
 
 [[package]]
 name = "typing-extensions"
-version = "4.14.1"
+version = "4.15.0"
 requires_python = ">=3.9"
 summary = "Backported and Experimental Type Hints for Python 3.9+"
 groups = ["default", "dev"]
 files = [
-    {file = "typing_extensions-4.14.1-py3-none-any.whl", hash = "sha256:d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76"},
-    {file = "typing_extensions-4.14.1.tar.gz", hash = "sha256:38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"},
+    {file = "typing_extensions-4.15.0-py3-none-any.whl", hash = "sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"},
+    {file = "typing_extensions-4.15.0.tar.gz", hash = "sha256:0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"},
 ]
 
 [[package]]
