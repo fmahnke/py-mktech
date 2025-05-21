@@ -10,6 +10,7 @@ from logging import (
     info,
     warning,
 )
+from typing import TypeAlias
 
 from mktech.os import environ
 from mktech.path import Path
@@ -26,40 +27,9 @@ __all__ = [
     'init'
 ]
 
+Level: TypeAlias = str | int
+
 TRACE = 5
-
-
-def set_detail(level: int, time: bool = False) -> None:
-    if _formatter is None:
-        raise RuntimeError('log is not initialized')
-
-    if level < 0 or level > len(_detail_str) - 1:
-        raise Exception()
-    else:
-        detail_str = _detail_str[level]
-
-        if time:
-            detail_str = f'%(asctime)s:{detail_str}'
-
-        _formatter.format_str(detail_str)
-
-
-def set_formatter(formatter: 'Formatter') -> None:
-    global _root_logger
-
-    for handler in _root_logger.handlers:
-        handler.setFormatter(formatter)
-
-
-def get_level() -> int:
-    return _root_logger.level
-
-
-def set_level(level: int | str) -> None:
-    _root_logger.setLevel(level)
-
-
-# Initialize the global logger
 
 _detail_str = [
     '%(levelname)s: %(message)s',
@@ -72,6 +42,8 @@ _detail_formatter = [
     logging.Formatter(_detail_str[1]),
     logging.Formatter(_detail_str[2])
 ]
+
+# formatters
 
 
 class Formatter(logging.Formatter):
@@ -128,6 +100,41 @@ class Formatter(logging.Formatter):
 
         self._formatters = [logging.Formatter(it) for it in formats]
 
+
+def set_formatter(formatter: 'Formatter') -> None:
+    global _root_logger
+
+    for handler in _root_logger.handlers:
+        handler.setFormatter(formatter)
+
+
+# log levels
+
+
+def set_detail(level: int, time: bool = False) -> None:
+    if _formatter is None:
+        raise RuntimeError('log is not initialized')
+
+    if level < 0 or level > len(_detail_str) - 1:
+        raise Exception()
+    else:
+        detail_str = _detail_str[level]
+
+        if time:
+            detail_str = f'%(asctime)s:{detail_str}'
+
+        _formatter.format_str(detail_str)
+
+
+def get_level() -> int:
+    return _root_logger.level
+
+
+def set_level(level: int | str) -> None:
+    _root_logger.setLevel(level)
+
+
+# Initialize the global logger
 
 _formatter: Formatter | None = None
 _root_logger = logging.getLogger('root')
