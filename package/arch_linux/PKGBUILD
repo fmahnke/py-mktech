@@ -1,0 +1,28 @@
+# Maintainer: Fritz Mahnke <fritz@mahnke.tech>
+pkgname=python-mktech
+pkgver=0.16.0
+pkgrel=1
+pkgdesc="mktech"
+arch=(any)
+url="TODO"
+license=('GPL-3.0-or-later')
+depends=(python-click python-pexpect python-pydantic-settings python-result)
+makedepends=(git python-build python-installer python-wheel python-pdm-backend)
+source=("$pkgname::git+http://git/lib/python/mktech/mktech.git")
+sha256sums=('SKIP')
+
+# prepare() 
+#     cd "$srcdir/$pkgname"
+# }
+
+build() {
+    cd "$srcdir/$pkgname"
+
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "$srcdir/$pkgname"
+
+    python -m installer --destdir="$pkgdir" dist/*.whl
+}
