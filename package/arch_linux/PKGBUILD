@@ -1,14 +1,23 @@
 # Maintainer: Fritz Mahnke <fritz@mahnke.tech>
 pkgname=python-mktech
-pkgver=0.16.0
+pkgver=0.21.0
+tag=${pkgver}-dev
 pkgrel=1
 pkgdesc="mktech"
 arch=(any)
 url="TODO"
 license=('GPL-3.0-or-later')
-depends=(python-click python-pexpect python-pydantic-settings python-result)
+depends=(
+    python-click
+    python-jsonschema
+    python-pexpect
+    python-pydanclick
+    python-pydantic-settings
+    python-result
+    python-sarge
+)
 makedepends=(git python-build python-installer python-wheel python-pdm-backend)
-source=("$pkgname::git+http://git/lib/python/mktech/mktech.git")
+source=("$pkgname::git+http://git/lib/python/mktech/mktech.git#tag=$tag")
 sha256sums=('SKIP')
 
 # prepare() 
