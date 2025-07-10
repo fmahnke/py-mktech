@@ -1,9 +1,10 @@
+import sys
 from typing import Any
 
 import click
 from pydanclick import from_pydantic as from_config
 
-from mktech import log
+from mktech.log import log
 
 __all__ = ['from_config', 'top']
 
@@ -20,7 +21,7 @@ def top() -> Any:
         @click.command(**top_command_args)  # type: ignore[call-overload,misc]
         @click.option('-l', '--log-level', default='warning')
         def wrapper(log_level: str, *args: Any, **kwargs: Any) -> Any:
-            log.init(log_level)
+            _ = log.add(sys.stderr, level=log_level)
 
             func(*args, **kwargs)
 

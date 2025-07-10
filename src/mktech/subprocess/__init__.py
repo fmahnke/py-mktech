@@ -6,8 +6,8 @@ from typing import Any
 
 import pexpect
 
-from mktech import log
 from mktech.error import Err, Ok, Result, todo
+from mktech.log import log, log_args, DEBUG
 
 
 class SubprocessIsAliveError(Exception):

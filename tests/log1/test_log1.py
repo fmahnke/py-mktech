@@ -5,7 +5,7 @@ from typing import Generator
 
 import pytest
 
-from mktech import log
+from mktech import log1
 from mktech.path import Path
 
 log_regex = re.compile(r'([A-Z]*):(.*)\n')
@@ -29,7 +29,7 @@ def log_file() -> Generator[Path]:
 
 class TestLog:
     def test_log(self, log_file: Path) -> None:
-        log.init(
+        log1.init(
             'd',
             stream=False,
             log_file_path=log_file,
@@ -37,7 +37,7 @@ class TestLog:
             color=False
         )
 
-        log.info('log message')
+        log1.info('log message')
 
         with open(log_file) as file:
             data = file.readlines()
@@ -51,7 +51,7 @@ class TestLog:
             assert match.group(2) == ' log message'
 
     def test_log_detail(self, log_file: Path) -> None:
-        log.init(
+        log1.init(
             'd',
             stream=False,
             log_file_path=log_file,
@@ -59,9 +59,9 @@ class TestLog:
             color=False
         )
 
-        log.set_detail(2)
+        log1.set_detail(2)
 
-        log.info('log message')
+        log1.info('log message')
 
         with open(log_file) as file:
             data = file.readlines()
@@ -75,10 +75,10 @@ class TestLog:
             assert match.group(1) == 'INFO'
             assert match.group(
                 2
-            ) == 'root:test_log::test_log_detail: log message'
+            ) == 'root:test_log1::test_log_detail: log message'
 
     def test_log_set_level(self, log_file: Path) -> None:
-        log.init(
+        log1.init(
             'i',
             stream=False,
             log_file_path=log_file,
@@ -86,12 +86,12 @@ class TestLog:
             color=False
         )
 
-        log.info('log message')
-        log.debug('log message')
+        log1.info('log message')
+        log1.debug('log message')
 
-        log.set_level(log.DEBUG)
+        log1.set_level(log1.DEBUG)
 
-        log.debug('log message')
+        log1.debug('log message')
 
         with open(log_file) as file:
             data = file.readlines()
@@ -111,7 +111,7 @@ class TestLog:
             assert match.group(2) == ' log message'
 
     def test_log_with_color(self, log_file: Path) -> None:
-        log.init(
+        log1.init(
             'd',
             stream=False,
             log_file_path=log_file,
@@ -119,7 +119,7 @@ class TestLog:
             color=True
         )
 
-        log.info('log message')
+        log1.info('log message')
 
         with open(log_file) as file:
             data = file.readlines()
@@ -133,7 +133,7 @@ class TestLog:
             assert match.group(2) == 'log message'
 
     def test_log_with_time(self, log_file: Path) -> None:
-        log.init(
+        log1.init(
             'd',
             stream=False,
             log_file_path=log_file,
@@ -141,9 +141,9 @@ class TestLog:
             color=False
         )
 
-        log.set_detail(0, time=True)
+        log1.set_detail(0, time=True)
 
-        log.info('log message')
+        log1.info('log message')
 
         with open(log_file) as file:
             data = file.readlines()

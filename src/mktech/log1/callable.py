@@ -1,15 +1,16 @@
 import functools
 import inspect
+import logging
 from collections.abc import Callable, Sequence
 from typing import Any, TypeAlias
 
-from loguru import logger as log
+from mktech import log1 as log
 
-Level: TypeAlias = str
+Level: TypeAlias = str | int
 
 
 def log_args(
-    level: Level,
+    level: Level = log.DEBUG,
     args_to_log: Sequence[Any] | None = None,
 ) -> Callable[..., Any]:
     def decorator(func: Callable[..., Any]) -> Callable[..., Any]:
@@ -26,7 +27,12 @@ def log_args(
 
             log_data_str = ', '.join([f'{k}={v}' for k, v in log_data.items()])
 
-            log.log(level, f"{func.__name__}({log_data_str})")
+            if isinstance(level, str):
+                level_int = logging.getLevelNamesMapping()[level]
+            else:
+                level_int = level
+
+            log.log(level_int, f"{func.__name__}({log_data_str})")
 
             return func(*func_args, **func_kwargs)
 
