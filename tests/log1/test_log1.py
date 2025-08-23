@@ -1,7 +1,7 @@
 import os
 import re
+from collections.abc import Generator
 from tempfile import mkstemp
-from typing import Generator
 
 import pytest
 
@@ -18,7 +18,7 @@ log_regex_time = re.compile(
 
 
 @pytest.fixture
-def log_file() -> Generator[Path]:
+def log_file() -> Generator[Path, None, None]:
     file = mkstemp()
 
     yield Path(file[1])
