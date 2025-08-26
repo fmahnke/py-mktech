@@ -1,0 +1,34 @@
+{
+  "include": [
+    "src",
+    "tests"
+  ],
+
+  "typeCheckingMode": "recommended",
+
+  "reportAny": false,
+  "reportArgumentType": false,
+  "reportAttributeAccessIssue": false,
+  "reportCallIssue": false,
+  "reportDeprecated": false,
+  "reportExplicitAny": false,
+  "reportImplicitOverride": false,
+  "reportImportCycles": false,
+  "reportInvalidTypeVarUse": false,
+  "reportMatchNotExhaustive": false,
+  "reportPrivateUsage": false,
+  "reportUnannotatedClassAttribute": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownMemberType": false,
+  "reportUnknownVariableType": false,
+  "reportUnnecessaryComparison": false,
+  "reportUnnecessaryIsInstance": false,
+  "reportUnnecessaryTypeIgnoreComment": false,
+  "reportUnreachable": false,
+  "reportUntypedFunctionDecorator": false,
+  "reportUnusedCallResult": false,
+  "reportUnusedParameter": false,
+
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux"
+}
